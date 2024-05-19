@@ -1,0 +1,11 @@
+name: {{cookiecutter.project_slug}}
+description: {{cookiecutter.project_description}}
+models:
+  - name: your_model_name
+    module: bentoml.{{cookiecutter.ml_framework}}
+    path: path/to/your/model
+service:
+  runners:
+    - name: your_runner_name
+      type: bentoml.{{cookiecutter.ml_framework}}.Runner
+      path: path/to/your/model

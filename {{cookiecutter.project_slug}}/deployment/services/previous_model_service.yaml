@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: previous-model-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: previous-model-service
+  template:
+    metadata:
+      labels:
+        app: previous-model-service
+    spec:
+      containers:
+      - name: previous-model
+        image: previous_model_image:latest
+        ports:
+        - containerPort: 5001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: previous-model-service
+spec:
+  selector:
+    app: previous-model-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5001

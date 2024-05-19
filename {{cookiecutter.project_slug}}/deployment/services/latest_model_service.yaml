@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: latest-model-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: latest-model-service
+  template:
+    metadata:
+      labels:
+        app: latest-model-service
+    spec:
+      containers:
+      - name: latest-model
+        image: latest_model_image:latest
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: latest-model-service
+spec:
+  selector:
+    app: latest-model-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000

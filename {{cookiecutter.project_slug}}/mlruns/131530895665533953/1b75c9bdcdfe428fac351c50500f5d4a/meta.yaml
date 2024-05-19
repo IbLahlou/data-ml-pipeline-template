@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/131530895665533953/1b75c9bdcdfe428fac351c50500f5d4a/artifacts
+end_time: 1716125823756
+entry_point_name: ''
+experiment_id: '131530895665533953'
+lifecycle_stage: active
+run_id: 1b75c9bdcdfe428fac351c50500f5d4a
+run_name: suave-vole-525
+run_uuid: 1b75c9bdcdfe428fac351c50500f5d4a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716125796030
+status: 3
+tags: []
+user_id: ibrahim-lahlou

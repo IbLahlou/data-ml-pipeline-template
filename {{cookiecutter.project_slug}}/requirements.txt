@@ -1,0 +1,14 @@
+prefect=={{cookiecutter.prefect_version}}
+bentoml=={{cookiecutter.bentoml_version}}
+mlflow=={{cookiecutter.mlflow_version}}
+numpy
+pandas
+matplotlib
+pyYAML
+tqdm
+types-PyYAML
+pytest
+unidecode
+scikit-learn
+{{cookiecutter.ml_framework}}  # Add the selected ML framework
+-e .
