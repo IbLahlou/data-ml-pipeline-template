@@ -20,7 +20,7 @@ TODO: Add pipeline architecture diagram.
 
 1. Clone the repository:
 \`\`\`bash
-git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}.git
+git clone https://github.com/IbLahlou/{{cookiecutter.project_slug}}.git
 \`\`\`
 2. Navigate to the project directory:
 \`\`\`bash
