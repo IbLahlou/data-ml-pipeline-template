@@ -8,7 +8,7 @@ import pickle
 def save_model(model: LogisticRegression):
     bentoml.sklearn.save_model("bank_model", model)
 
-    model_path = 'model/bank_model.pkl'
+    model_path = 'artifacts/model/bank_model.pkl'
     
     # Save the model using pickle
     with open(model_path, 'wb') as f:

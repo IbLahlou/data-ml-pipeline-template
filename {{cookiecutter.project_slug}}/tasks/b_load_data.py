@@ -11,3 +11,5 @@ def load_data(filename: str):
     bank_df = bank_df.sample(frac=1)
     return bank_df
 # Add your task execution logic here
+
+

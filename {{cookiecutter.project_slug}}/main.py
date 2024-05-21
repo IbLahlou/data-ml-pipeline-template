@@ -30,7 +30,7 @@ def serve_model(port):
 
 
 @flow(log_prints=True)
-def ml_workflow(filename: str = "data/train.csv"):
+def ml_workflow(filename: str = "artifacts/data/train.csv"):
     start_mlflow_server()
     data = load_data(filename)
     prep_data = data_preprocessing(data)

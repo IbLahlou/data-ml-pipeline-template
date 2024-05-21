@@ -49,12 +49,12 @@ To generate a new project using this template, follow these steps:
 
 2. **Generate a new project**:
     ```bash
-    cookiecutter https://github.com/{{cookiecutter.github_username}}/{{template_name}}.git
+    cookiecutter https://github.com/IbLahlou/MLOPS-template-PBR.git
     ```
 
 3. **Navigate to the generated project directory**:
     ```bash
-    cd {{cookiecutter.project_slug}}
+    cd MLOPS-template-PBR
     ```
 
 4. **Install the dependencies**:

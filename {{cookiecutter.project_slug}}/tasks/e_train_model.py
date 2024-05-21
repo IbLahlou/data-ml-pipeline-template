@@ -1,12 +1,17 @@
+import yaml
 from prefect import task
 from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, log_loss
 import mlflow
 
+def load_hparams(filename: str):
+    with open(filename, 'r') as file:
+        hparams = yaml.safe_load(file)
+    return hparams
 
 @task
-def train_model(X_train, X_test, y_train, y_test):
+def train_model(X_train, X_test, y_train, y_test, hparams_file: str = "artifacts/hparams.yml"):
     mlflow.set_tracking_uri("http://localhost:5000")
 
     # Create or set the experiment
@@ -16,12 +21,15 @@ def train_model(X_train, X_test, y_train, y_test):
 
     mlflow.set_experiment(experiment_name)
 
+    # Load hyperparameters
+    hparams = load_hparams(hparams_file)
+
     # Selecting the best features
-    KBest = SelectKBest(chi2, k="all")
+    KBest = SelectKBest(chi2, k=hparams['k_best'])
     X_train = KBest.fit_transform(X_train, y_train)
     X_test = KBest.transform(X_test)
 
-    model = LogisticRegression(max_iter=1000, random_state=125)
+    model = LogisticRegression(max_iter=hparams['max_iter'], random_state=hparams['random_state'])
 
     with mlflow.start_run():
         model.fit(X_train, y_train)
