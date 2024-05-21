@@ -1,1 +1,4 @@
 {{cookiecutter.project_slug}}/mlruns/*
+
+bentoml/__pycache__/*
+tasks/__pycache__/*
