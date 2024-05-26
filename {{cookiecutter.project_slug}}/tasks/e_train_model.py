@@ -1,3 +1,4 @@
+{% if cookiecutter.data_load == "example" %}
 import yaml
 from prefect import task
 from sklearn.feature_selection import SelectKBest, chi2
@@ -41,3 +42,44 @@ def train_model(X_train, X_test, y_train, y_test, hparams_file: str = "artifacts
         mlflow.log_metric("train_accuracy", train_accuracy)
 
         return model
+
+
+'''
+import yaml
+from prefect import task
+import mlflow
+#import feature selector
+#import model
+#import training metrics
+
+
+
+@task
+def train_model(X_train, X_test, y_train, y_test, hparams_file: str = "artifacts/hparams.yml"):
+    mlflow.set_tracking_uri("http://localhost:5000")
+
+    # Create or set the experiment
+    experiment_name = "{{cookiecutter.experiment_name}}"
+    if not mlflow.get_experiment_by_name(experiment_name):
+        mlflow.create_experiment(experiment_name)
+
+    mlflow.set_experiment(experiment_name)
+
+    # Load hyperparameters
+    hparams = load_hparams(hparams_file)
+
+
+
+    model = The Model
+    
+    with mlflow.start_run():
+        model.fit(X_train, y_train)
+        train_predictions = model.predict(X_train)
+        train_loss = log_loss(y_train, train_predictions)
+        train_accuracy = accuracy_score(y_train, train_predictions)
+
+        mlflow.log_metric("train_loss", train_loss)
+        mlflow.log_metric("train_accuracy", train_accuracy)
+
+        return model
+'''

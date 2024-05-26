@@ -1,3 +1,5 @@
+
+{% if cookiecutter.data_load == "example" %}
 import bentoml
 import numpy as np
 from bentoml.io import NumpyNdarray
@@ -38,6 +40,8 @@ async def predict_ab_test(input_data: np.ndarray):
     else:
         prediction = model_b.predict(input_data)
     return prediction
+
+{% endif %}
 
 '''
 # Framework-specific imports

@@ -1,3 +1,4 @@
+{% if cookiecutter.data_load == "example" %}
 from prefect import task
 import pandas as pd
 from prefect import task
@@ -5,6 +6,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import MinMaxScaler, OrdinalEncoder
 
 
+# this is just simple example for churn modeling
 @task
 def data_preprocessing(bank_df: pd.DataFrame):
     cat_col = [1, 2]
@@ -26,4 +28,15 @@ def data_preprocessing(bank_df: pd.DataFrame):
     scaler = MinMaxScaler()
     bank_df.iloc[:, num_col] = scaler.fit_transform(bank_df.iloc[:, num_col])
     return bank_df
+
+{% endif %}
+'''
+import pandas as pd
+from prefect import task
+
+@task
+def data_preprocessing(df: pd.DataFrame):
+    
+    return df
 # Add your task execution logic here
+'''

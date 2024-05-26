@@ -9,9 +9,9 @@ setup(
     python_requires=">={{cookiecutter.python_version}}",
     packages=find_packages(),
     install_requires=[
-        "prefect=={{cookiecutter.prefect_version}}",
-        "bentoml=={{cookiecutter.bentoml_version}}",
-        "mlflow=={{cookiecutter.mlflow_version}}",
+        "prefect",
+        "bentoml",
+        "mlflow",
         "numpy",
         "pandas",
         "matplotlib",

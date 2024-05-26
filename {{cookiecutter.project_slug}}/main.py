@@ -42,3 +42,4 @@ def ml_workflow(filename: str = "artifacts/data/train.csv"):
 
 if __name__ == "__main__":
     ml_workflow()
+    #serve_model(3000)
