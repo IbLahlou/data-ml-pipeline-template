@@ -1,14 +1,14 @@
 {
   "project_name": "My Project",
   "project_slug": "my_project",
+  "model_name": "a short name please like (bank_model)",
   "project_description": "A short description of the project.",
   "author_name": "Your Name",
   "email": "your.email@example.com",
-  "github_username": "your_github_username",
+  "github_tag": "your_github_username",
   "python_version": "3.9.18",
-  "prefect_version": "2.19.0",
-  "bentoml_version": "1.2.6",
-  "mlflow_version": "2.12.2",
-  "use_streamlit": ["yes", "no"],
-  "ml_framework": ["tensorflow", "torch", "sklearn", "other"]
+  "frontend": ["streamlit", "vite-react", "vanilla" ,""],
+  "ml_framework": ["tensorflow", "torch", "sklearn", ""],
+  "data_load": ["local load", "download", "secure download" ,"example" ,""],
+  "experiment_name" : "a short name please like (bank_model experiment)"
 }

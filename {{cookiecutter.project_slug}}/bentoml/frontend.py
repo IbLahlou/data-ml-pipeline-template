@@ -10,3 +10,5 @@ MODEL_B_URL = f"{BASE_URL}/model_b_predict"
 AB_TEST_URL = f"{BASE_URL}/predict_ab_test"
 
 {% endif %}
+
+# Other script template are on going

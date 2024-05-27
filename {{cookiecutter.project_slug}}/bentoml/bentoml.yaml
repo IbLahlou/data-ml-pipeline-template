@@ -6,6 +6,6 @@ models:
     path: path/to/your/model
 service:
   runners:
-    - name: your_runner_name
+    - name: 
       type: bentoml.{{cookiecutter.ml_framework}}.Runner
       path: path/to/your/model
