@@ -1,6 +1,6 @@
-prefect=={{cookiecutter.prefect_version}}
-bentoml=={{cookiecutter.bentoml_version}}
-mlflow=={{cookiecutter.mlflow_version}}
+prefect
+bentoml
+mlflow
 numpy
 pandas
 matplotlib
