@@ -27,6 +27,11 @@ def evaluate_model(y_test, prediction: pd.DataFrame, metrics_file: str = 'artifa
     mlflow.log_metric("accuracy", accuracy)
     mlflow.log_metric("f1_score", f1)
 
+@task
+def get_prediction(X_test, model: LogisticRegression):
+    return model.predict(X_test)
+
+
 {% endif %}
 
 '''
