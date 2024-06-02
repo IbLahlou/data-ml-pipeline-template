@@ -43,7 +43,7 @@ def train_model(X_train, X_test, y_train, y_test, hparams_file: str = "artifacts
 
         return model
 
-
+{% endif %}
 '''
 import yaml
 from prefect import task
