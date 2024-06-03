@@ -1,11 +1,35 @@
 name: {{cookiecutter.project_slug}}
 description: {{cookiecutter.project_description}}
+service: "bank_model_service"
+labels:
+  - "bank_model"
+  - "churn_modeling"
+  - "latest"
+
+include:
+  - "*.py"
+  - "bentoml.yaml"
+  - "artifacts/**"
+  - "mlruns/**"
+  - "tasks/**"
+
+python:
+  packages:
+    - numpy
+    - bentoml
+    - scikit-learn
+
 models:
-  - name: your_model_name
-    module: bentoml.{{cookiecutter.ml_framework}}
-    path: path/to/your/model
-service:
-  runners:
-    - name: 
-      type: bentoml.{{cookiecutter.ml_framework}}.Runner
-      path: path/to/your/model
+  - name: "bank_model"
+    module: "bentoml.sklearn"
+    tags: ["latest"]
+  - name: "bank_model"
+    module: "bentoml.sklearn"
+    tags: ["previous"]
+
+docker:
+  base_image: "bentoml/model-server:0.14.0"
+  python_version: "3.8"
+
+bentoml_version: "0.14.0"
+
