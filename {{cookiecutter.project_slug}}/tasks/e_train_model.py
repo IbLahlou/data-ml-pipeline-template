@@ -24,7 +24,7 @@ def train_model(X_train, X_test, y_train, y_test, hparams_file: str = "artifacts
     mlflow.set_tracking_uri("http://localhost:5000")
 
     # Create or set the experiment
-    experiment_name = "Bank Model Experiment"
+    experiment_name = "{{cookiecutter.experiment_name}}"
     if not mlflow.get_experiment_by_name(experiment_name):
         mlflow.create_experiment(experiment_name)
 
