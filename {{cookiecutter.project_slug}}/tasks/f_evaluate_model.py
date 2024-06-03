@@ -12,6 +12,8 @@ import bentoml
 from bentoml.io import NumpyNdarray
 import mlflow
 import requests
+import os
+import json
 
 @task
 def evaluate_model(y_test, prediction: pd.DataFrame, metrics_file: str = 'artifacts/metrics.json'):
