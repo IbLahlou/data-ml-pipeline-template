@@ -85,10 +85,6 @@ When you run Cookiecutter, you will be prompted to enter the following informati
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a Pull Request.
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Acknowledgements
 
 - [Cookiecutter](https://github.com/cookiecutter/cookiecutter): A command-line utility that creates projects from project templates.
