@@ -73,9 +73,6 @@ When you run Cookiecutter, you will be prompted to enter the following informati
 - `email`: Your email address.
 - `github_username`: Your GitHub username.
 - `python_version`: The Python version to use.
-- `prefect_version`: The version of Prefect to use.
-- `bentoml_version`: The version of BentoML to use.
-- `mlflow_version`: The version of MLflow to use.
 - `use_streamlit`: Whether to include Streamlit support (`yes` or `no`).
 - `ml_framework`: The machine learning framework to use (`tensorflow`, `torch`, `sklearn`, or `other`).
 
