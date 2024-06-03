@@ -12,7 +12,7 @@ import bentoml
 from bentoml.io import NumpyNdarray
 import mlflow
 import requests
-
+import yaml
 
 def load_hparams(filename: str):
     with open(filename, 'r') as file:
