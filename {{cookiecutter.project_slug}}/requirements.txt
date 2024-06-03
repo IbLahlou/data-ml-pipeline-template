@@ -10,5 +10,6 @@ types-PyYAML
 pytest
 unidecode
 scikit-learn
+gitpython
 {{cookiecutter.ml_framework}}  # Add the selected ML framework
 -e .
