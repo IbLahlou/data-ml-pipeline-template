@@ -1,10 +1,17 @@
 {% if cookiecutter.data_load == "example" %}
-import json
-import os
 import pandas as pd
-from sklearn.metrics import accuracy_score, f1_score
-from prefect import task
+import numpy as np
+from prefect import flow, task
+from sklearn.feature_selection import SelectKBest, chi2
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, f1_score, log_loss
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler, OrdinalEncoder
+import bentoml
+from bentoml.io import NumpyNdarray
 import mlflow
+import requests
 
 @task
 def evaluate_model(y_test, prediction: pd.DataFrame, metrics_file: str = 'artifacts/metrics.json'):
