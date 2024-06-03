@@ -1,10 +1,18 @@
 {% if cookiecutter.data_load == "example" %}
-import yaml
-from prefect import task
+import pandas as pd
+import numpy as np
+from prefect import flow, task
 from sklearn.feature_selection import SelectKBest, chi2
+from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, log_loss
+from sklearn.metrics import accuracy_score, f1_score, log_loss
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler, OrdinalEncoder
+import bentoml
+from bentoml.io import NumpyNdarray
 import mlflow
+import requests
+
 
 def load_hparams(filename: str):
     with open(filename, 'r') as file:
